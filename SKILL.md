@@ -1,73 +1,41 @@
 ---
-name: pawapay-integration
-description: >
-  Guide complet et pas-à-pas pour intégrer les paiements Mobile Money via l'API pawaPay (Merchant API V1 - deposits, payouts, refunds, callbacks signés RFC-9421). À utiliser dès que l'utilisateur mentionne pawaPay, Mobile Money, Orange Money, MTN MoMo, Airtel Money, M-Pesa, dépôt/retrait mobile money, webhook de paiement mobile, ou veut configurer un fichier .env pour des paiements en Afrique. Détecte le langage/framework du projet (Node.js, Laravel/PHP, ou autre stack via guide générique REST), génère le .env documenté, le code de signature RFC-9421, les fonctions deposit/payout/refund, la vérification des callbacks, et une checklist de sécurité avant mise en production. Conçu pour être utilisable par des non-développeurs  - ne demande que le strict nécessaire et explique chaque étape en français simple.
+name: pawapay
+description: Concevoir, intégrer, auditer et dépanner PawaPay Merchant API v2, avec encaissements directs ou hébergés, payouts, retraits de solde applicatif, remboursements, callbacks signés et rapprochement. Utiliser pour les projets web ou mobiles, notamment Laravel/PHP, Next.js/React, Flutter/React Native, Firebase, PostgreSQL/Neon/Supabase, Vercel et Cloud Run.
 ---
+# PawaPay : intégration sécurisée
 
-# Intégration pawaPay (Mobile Money)
+Répondre dans la langue du demandeur. Adapter le code au dépôt existant. Ce skill est une méthode d'intégration, pas une certification de sécurité ni un SDK déjà testé en production.
 
-## Portée réelle de ce skill (important)
+## Démarrer
 
-pawaPay est un **agrégateur unique** de Mobile Money Operators (MMO) en Afrique. Cela veut dire :
-- Il n'y a **pas** d'intégration séparée à faire pour Orange Money, MTN MoMo, Airtel Money, M-Pesa, Moov, etc. Tous sont déjà accessibles via **une seule API pawaPay**, en spécifiant un `correspondent` (ex: `ORANGE_COD`, `AIRTEL_COD`, `VODACOM_MPESA_COD` pour la RDC).
-- Ajouter un "nouveau fournisseur" = ajouter une constante `correspondent` + vérifier son pays/devise/décimales dans `references/correspondents.md`. Ce n'est jamais une nouvelle intégration technique.
-- Ne jamais proposer de "pattern adaptateur multi-provider" pour swap pawaPay avec un autre agrégateur, sauf si l'utilisateur le demande explicitement pour une vraie redondance business (deux comptes marchands différents).
+1. Inspecter les instructions du dépôt, les versions, l'authentification, les routes, le stockage, le modèle de solde, les queues et les intégrations existantes. Ne pas remplacer un flux fonctionnel sans nécessité.
+2. Identifier l'opération, l'environnement, les pays/devises/opérateurs, le montant fixe ou libre, le propriétaire de la transaction et les droits nécessaires. Lire la configuration du projet avant de poser les seules questions bloquantes.
+3. Lire [contrat API](references/api-contract.md), [sécurité](references/security.md) et les références conditionnelles ci-dessous. Vérifier les pages officielles pertinentes avant de coder. Les documents consultés et leurs empreintes figurent dans [sources](references/sources.md) et [inventaire](references/source-inventory.json). Ne pas charger toutes les sources à chaque tâche.
+4. Distinguer les faits PawaPay, les choix d'architecture recommandés et les points non confirmés. En cas de contradiction documentaire, lire [écarts](references/known-gaps.md), isoler le comportement et le vérifier en sandbox. Ne pas fabriquer un endpoint, un champ, une limite, un SDK ou une garantie.
+5. Implémenter la tranche demandée, ses migrations et ses tests utiles. Préserver les conventions du projet. Séparer les états externes, l'état métier et les écritures financières.
+6. Vérifier les scénarios de [validation](references/testing-operations.md). Rapporter ce qui est effectivement testé, ce qui est seulement documenté, et les blocages restant avant production.
 
-**Version de l'API** : ce skill couvre l'API **V1** (celle documentée sur docs.pawapay.io/using_the_api, avec `correspondent`, `payer`/`recipient.address.value`, `customerTimestamp`, `statementDescription`). pawaPay a une **V2** qui renomme des champs (`correspondent`→`provider`, `MSISDN`→`MMO`, `address.value`→`accountDetails.phoneNumber`, `statementDescription`→`customerMessage`, suppression de `customerTimestamp`). **Avant de générer du code, demande à l'utilisateur quelle version son compte utilise** (visible dans le Dashboard pawaPay ou dans la doc reçue de leur contact commercial). Ne jamais mélanger les deux formats.
+## Choisir la référence
 
-## Étape 1 — Comprendre le besoin réel
+- Encaissements directs, checkout, Payment Page, redirections et montants libres : [collecte](references/collections.md).
+- Retraits, payouts, remboursements, remittances et split payments : [décaissements](references/disbursements.md).
+- Circuit de données, réservations, idempotence, inbox/outbox et comptabilité : [données](references/data-ledger.md).
+- Laravel/PHP, Next.js, mobile, bases et hébergement : [stacks](references/stacks.md).
+- Déploiement, panne, audit et tests : [exploitation](references/testing-operations.md).
+- Chargement depuis Claude Code, Codex, Antigravity, Hermes ou autre agent : [portabilité](references/agent-portability.md).
 
-Pose ces questions (une à la fois, langage simple) :
-1. Le projet existe déjà, ou c'est un nouveau projet ? → si existant, demander le chemin/langage.
-2. Quelles opérations sont nécessaires : encaisser de l'argent (**deposit**), envoyer de l'argent à quelqu'un (**payout**), et/ou rembourser (**refund**) ?
-3. Sandbox ou déjà en production ?
-4. Pays et opérateur(s) concernés (ex: RDC → Orange, Airtel, Vodacom M-Pesa) ?
+## Invariants à préserver
 
-## Étape 2 — Détecter le langage/framework
+- Garder les secrets PawaPay et les clés privées exclusivement côté serveur. Ne jamais demander ni enregistrer le PIN Mobile Money. Un OTP de préautorisation documenté est distinct du PIN et ne doit pas être journalisé.
+- Calculer ou valider le montant côté serveur. Vérifier l'identité, le tenant, les droits, la devise, le bénéficiaire et le solde disponible avant tout retrait.
+- Enregistrer l'identifiant UUIDv4 et l'intention avant l'appel. Réutiliser le même identifiant pour une reprise technique de la même intention, sans changer son contenu.
+- Ni HTTP 200, ni `ACCEPTED`, ni `DUPLICATE_IGNORED`, ni retour de navigateur ne prouvent le succès financier. Un timeout n'est pas un échec financier.
+- Authentifier les callbacks et traiter callback, polling et reprise via le même applicateur transactionnel idempotent. Un événement ne doit produire qu'un seul effet financier.
+- Ne pas assimiler le portefeuille marchand PawaPay aux soldes individuels de la plateforme. Le second exige son propre registre et des réservations atomiques.
+- Ne jamais appeler PawaPay dans une fonction de transaction Firestore/PostgreSQL susceptible d'être réexécutée automatiquement. Utiliser une intention persistée et un worker.
+- Ne pas créer un nouveau payout parce qu'un précédent est lent, `ENQUEUED`, `PROCESSING` ou `IN_RECONCILIATION`.
+- Ne pas exécuter de mouvement d'argent réel, modifier des callbacks en production ou remplacer des secrets sur la seule base d'une demande de code. Respecter l'autorisation de la session et les restrictions de l'environnement. Ne jamais inclure un secret dans le dépôt ou les sorties.
 
-Si un projet existe, inspecte-le (package.json, composer.json, requirements.txt, etc.) pour détecter la stack. Sinon, demande.
+## Actualiser le contrat
 
-- **Node.js / Express** → utiliser `templates/node-express/`
-- **PHP / Laravel** → utiliser `templates/php-laravel/`
-- **Toute autre stack** (Python/Django/Flask, Java/Spring, Go, Ruby, .NET, etc.) → suivre `references/generic-rest-guide.md` et adapter le code pawaPay (qui est un simple appel HTTP JSON) aux conventions de la stack détectée. Ne jamais inventer un SDK officiel pawaPay pour un langage qui n'en a pas — vérifier d'abord s'il existe un SDK communautaire avant d'écrire du code brut.
-
-## Étape 3 — Générer le fichier .env
-
-Demande UNIQUEMENT ce qui est nécessaire selon les opérations choisies à l'étape 1, puis génère un `.env` commenté à partir de `templates/env.template`. Ne jamais écrire de vraie clé dans le code source — uniquement des placeholders dans `.env.example`, jamais dans `.env` lui-même (qui doit être gitignoré).
-
-## Étape 4 — Générer le code d'intégration
-
-Utiliser le template correspondant à la stack. Chaque template couvre :
-- Client HTTP configuré (base URL sandbox/production depuis l'env)
-- Génération de `depositId`/`payoutId`/`refundId` en UUIDv4
-- Fonction deposit, payout, refund (selon besoin réel de l'utilisateur — ne pas générer ce qui n'est pas demandé)
-- Vérification de statut (polling) en fallback si pas de callback configuré
-- Réception et validation de callback (signature RFC-9421 si activée, sinon a minima vérification de l'IP source — voir `references/security-checklist.md`)
-
-Si l'utilisateur veut la signature RFC-9421 des requêtes sortantes (couche de sécurité optionnelle mais recommandée), lire `references/signatures-rfc9421.md` avant de générer ce code — c'est la partie la plus technique et la plus facile à mal implémenter.
-
-## Étape 5 — Vérifier avant production
-
-Avant de dire "c'est prêt", parcourir `references/security-checklist.md` avec l'utilisateur point par point et confirmer chaque case. Vérifier en particulier :
-- Le `.env` réel n'est jamais commité (vérifier `.gitignore`)
-- Les montants sont bien des strings avec le bon nombre de décimales pour le correspondent choisi (voir `references/correspondents.md` — ex: RDC en CDF supporte 2 décimales pour Airtel/Orange mais PAS pour Vodacom M-Pesa)
-- Le montant du callback (`depositedAmount`) est comparé au montant demandé avant de considérer la transaction comme fiable (protection contre `AMOUNT_DISCREPANCY`)
-- Les IP de callback pawaPay sont whitelistées côté firewall si pertinent
-- Test réel en sandbox avant bascule production (token différent, base URL différente — RIEN d'autre ne change)
-
-## Erreurs fréquentes à expliquer simplement
-
-- **"depositId déjà utilisé"** → l'API est idempotente par design ; réutiliser un UUID générera le même résultat que la première tentative, jamais une erreur silencieuse. Toujours générer un nouvel UUIDv4 par tentative.
-- **Montant rejeté** → décimales non supportées par ce correspondent précis (voir table pays dans `references/correspondents.md`).
-- **Pas de callback reçu** → vérifier que l'URL de callback est configurée dans le Dashboard pawaPay (ce n'est pas un paramètre de l'API, ça se configure dans le Dashboard) et que le firewall autorise les IP pawaPay listées dans `references/security-checklist.md`.
-- **Signature invalide** → horloge serveur désynchronisée (RFC-9421 utilise un horodatage avec expiration courte) ou mauvaise clé publique/privée entre sandbox et production (chaque environnement a sa propre paire de clés).
-
-## Fichiers de référence
-
-- `references/correspondents.md` — table complète des correspondents par pays (source : docs.pawapay.io/using_the_api)
-- `references/signatures-rfc9421.md` — détail de l'implémentation des signatures
-- `references/security-checklist.md` — checklist de mise en production réaliste (sans PCI DSS ni HMAC inventés)
-- `references/generic-rest-guide.md` — guide d'adaptation pour toute stack non couverte par un template
-- `templates/node-express/` — intégration Node.js complète
-- `templates/php-laravel/` — intégration Laravel complète
-- `templates/env.template` — modèle de .env documenté
+Utiliser `python scripts/inspect_openapi.py --file /chemin/openapi_v2.yaml` pour relever les chemins, champs obligatoires et états du schéma officiel téléchargé. Le script ne contacte aucune API financière et ne prouve pas le comportement réel. Comparer ses résultats aux guides et aux tests sandbox, notamment pour les écarts connus.

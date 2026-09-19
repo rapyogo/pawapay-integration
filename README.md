@@ -1,66 +1,50 @@
-# pawapay-integration
+# PawaPay Integration, API v2
 
-Skill (compatible Claude / Claude Code / agents IA de développement) pour intégrer les
-paiements Mobile Money via l'[API pawaPay](https://docs.pawapay.io/using_the_api) (V1).
-
-Ce dépôt contient un **skill**, pas une librairie à installer : c'est un ensemble
-d'instructions + de templates de code destiné à être chargé par un agent IA (Claude,
-Claude Code, etc.) pour guider une intégration pawaPay de bout en bout — .env, code de
-signature RFC-9421, deposits/payouts/refunds, vérification des callbacks, checklist de
-sécurité avant production.
-
-## Pourquoi ce skill
-
-pawaPay est un agrégateur unique de Mobile Money Operators en Afrique (Orange Money, MTN
-MoMo, Airtel Money, M-Pesa, Moov, Free Money, TNM, Zamtel, etc.) : une seule API, un
-paramètre `correspondent` par opérateur/pays. Ce skill part de ce principe et évite le
-piège classique de vouloir construire une couche d'abstraction "multi-fournisseurs"
-au-dessus d'un service qui fait déjà cette abstraction.
-
-## Contenu
-
-```
-SKILL.md                          # instructions principales pour l'agent IA
-references/
-  correspondents.md                # table complète des correspondents par pays
-  signatures-rfc9421.md            # implémentation des signatures HTTP (RFC-9421)
-  security-checklist.md            # checklist de mise en production réaliste
-  generic-rest-guide.md            # guide d'adaptation pour toute stack non couverte
-templates/
-  env.template                     # modèle de .env documenté
-  node-express/                    # client + route de callback Node.js
-  php-laravel/                     # service + controller Laravel
-```
+Skill réutilisable pour guider un agent de code dans une intégration sécurisée de PawaPay. Il contient des instructions, des références et un outil d’inspection du contrat, pas un SDK prêt pour la production.
 
 ## Utilisation
 
-- **Avec Claude.ai / Claude Code / Cowork** : télécharger ou cloner ce dépôt, puis
-  installer le dossier comme skill (`.skill` packagé disponible dans les
-  [Releases](../../releases), ou directement le dossier source).
-- **Sans agent IA** : les fichiers de `references/` et `templates/` restent lisibles et
-  réutilisables comme documentation/boilerplate classique.
+Cloner ce dépôt puis demander à votre agent :
 
-## Portée volontairement limitée
+> Lis SKILL.md, inspecte mon projet et utilise ses références pour intégrer le flux PawaPay demandé. Vérifie le contrat officiel actuel et implémente les contrôles et tests nécessaires.
 
-- Couvre l'API **V1** de pawaPay (celle documentée sur `docs.pawapay.io/using_the_api`).
-  pawaPay propose aussi une **V2** avec un format de payload différent
-  (`correspondent`→`provider`, etc.) — non couverte ici. Vérifiez la version utilisée par
-  votre compte avant d'appliquer ce skill.
-- Templates de code fournis pour **Node.js/Express** et **PHP/Laravel**. Pour toute autre
-  stack, voir `references/generic-rest-guide.md` — pawaPay étant une API REST/JSON
-  classique, l'adaptation est directe.
+Pour les agents qui prennent en charge les Agent Skills, installer le dossier selon la documentation de leur version. Le nom du skill est `pawapay`. Pour Claude Code, Codex, Antigravity, Hermes Agent et les autres outils, consulter [les consignes de portabilité](references/agent-portability.md). La lecture explicite du fichier reste possible sans découverte automatique.
 
-## Sécurité
+## Contenu
 
-Ne committez jamais de vrai token API ou de clé privée. `templates/env.template` ne
-contient que des placeholders. Voir `references/security-checklist.md` avant toute mise
-en production.
+- [SKILL.md](SKILL.md) : point d’entrée et invariants.
+- [Contrat API v2](references/api-contract.md) : routes, données et états.
+- [Encaissements](references/collections.md) : deposit, Checkout, Payment Page et redirections.
+- [Décaissements](references/disbursements.md) : payouts, retraits et remboursements.
+- [Sécurité](references/security.md) : secrets, signatures HTTP et callbacks.
+- [Données et registre financier](references/data-ledger.md) : réservations, idempotence et rapprochement.
+- [Stacks](references/stacks.md) : Laravel/PHP, Next.js/React, Flutter/React Native, Firebase, PostgreSQL/Neon/Supabase, Vercel et Cloud Run.
+- [Tests et exploitation](references/testing-operations.md) : scénarios de panne et conditions de mise en production.
+- [Écarts documentaires](references/known-gaps.md) : points nécessitant une validation ciblée.
+- [Sources](references/sources.md) : inventaire documentaire daté.
+
+## Inspection du schéma
+
+Le script nécessite Python 3 et PyYAML. Télécharger la spécification OpenAPI officielle dans un fichier local, puis exécuter :
+
+```sh
+python scripts/inspect_openapi.py --file /chemin/openapi_v2.yaml
+```
+
+Le script n’effectue aucun appel réseau ni paiement. Il extrait la structure; il ne valide pas le comportement réel du fournisseur.
+
+## Ancienne version
+
+Les anciennes instructions et les templates API v1 sont conservés dans [legacy-v1](legacy-v1/README.md). Ils ne sont pas compatibles avec les payloads v2 et ne sont pas validés par cette mise à jour. Ne pas les utiliser comme implémentation v2. Les anciens packages de release, s’ils existent, ne sont pas mis à jour par cette modification du dépôt.
+
+## Vérifications et limites
+
+Skill validé structurellement, liens relatifs contrôlés et script exercé sur la spécification officielle. Scénario de raisonnement évalué pour la concurrence des retraits et des callbacks. Aucun paiement réel, test marchand sandbox ou audit de production effectué.
+
+Documentation étudiée le 19 septembre 2026 : les capacités, limites et contrats doivent être revérifiés avant intégration. Le dépôt ne contient pas les manuels officiels complets et n’est pas affilié à PawaPay.
+
+Ne jamais publier de token, clé privée ou données client. Consulter la [documentation officielle](https://docs.pawapay.io/v2/docs/welcome).
 
 ## Licence
 
-MIT — voir [LICENSE](LICENSE).
-
-## Avertissement
-
-Ce skill n'est pas affilié à pawaPay. Toujours se référer à la
-[documentation officielle](https://docs.pawapay.io) en cas de doute ou de changement d'API.
+MIT. Voir [LICENSE](LICENSE).

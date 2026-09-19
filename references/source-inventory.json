@@ -1,0 +1,976 @@
+[
+  {
+    "url": "https://docs.pawapay.io/v2/docs/welcome.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "eb94517456beac3cf4960d321d930b63d16606637fb4a2fdcaee4d7e5797b841",
+    "bytes": 2214,
+    "sections": [
+      "Welcome",
+      "Learn more...",
+      "...and then jump right into it"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/whats_mobile_money.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "c1650bfad619263296c28c088383afbb9790c4c2c2d0ab22867c07a02c1b55b9",
+    "bytes": 5417,
+    "sections": [
+      "What's mobile money?",
+      "What is mobile money?",
+      "What does a payment look like?"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/what_to_know.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "ef5652fdf9572e5006b94350299d0a5d1e32d4a613235890d780368dd8d98485",
+    "bytes": 7445,
+    "sections": [
+      "What you should know",
+      "Callbacks",
+      "Polling for status",
+      "Through callbacks",
+      "Setting up callbacks",
+      "Handling callbacks",
+      "IPs to whitelist",
+      "MMO stability",
+      "Transaction limits",
+      "Backwards compatibility"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/how_to_start.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "d5a9a8125cc617c4bbb7ce35d497a9b2b9c4e6e88ce533f7d492349af9fc8ecc",
+    "bytes": 6445,
+    "sections": [
+      "How to start?",
+      "Where is the API?",
+      "Where is the PawaPay Dashboard?",
+      "How to authenticate calls to the Merchant API",
+      "Setting up callbacks",
+      "Starting to build the integration",
+      "Testing the integration"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/going_live.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "34e536ed9fdccd8863d324581136ba6dde555ff9aa7ad4ac54d6f4b326b10f00",
+    "bytes": 1457,
+    "sections": [
+      "Going live",
+      "Overview",
+      "Go-live testing"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/deposits.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "25367e19f54e5540eb17768bdd2e29ca48304e8fb1ee3391da8b8c3299332171",
+    "bytes": 64365,
+    "sections": [
+      "Deposits",
+      "Initiating a deposit",
+      "Asking for payment details from the customer",
+      "After initiating the deposit",
+      "Avoiding failures on initiation",
+      "Handling processing failures",
+      "Ensuring consistency",
+      "Other payment authorisation flows",
+      "Preauthorised flows",
+      "Redirection based flows",
+      "Customer chooses the amount",
+      "Payments in reconciliation",
+      "What to do next?"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/payouts.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "ae8add1403f3a0fdf62e64f3bc1c035ba74c9525695109ca48174e34ae4aa655",
+    "bytes": 31100,
+    "sections": [
+      "Payouts",
+      "Initiating a payout",
+      "Getting the phone number from the customer",
+      "Handling amounts",
+      "Handling enqueued payouts and provider availability",
+      "Handling failures on initiation",
+      "Handling processing failures",
+      "Ensuring consistency",
+      "Payments in reconciliation",
+      "What to do next?"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/refunds.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "c65a21dec94e9a6bdfa614706935598ef79365e4752897729261ac42990a181d",
+    "bytes": 22252,
+    "sections": [
+      "Refunds",
+      "Initiating a refund",
+      "Partial refund",
+      "Other considerations",
+      "Handling enqueued refunds and provider availability",
+      "Handling failures on initiation",
+      "Handling processing failures",
+      "Ensuring consistency",
+      "Payments in reconciliation",
+      "What to do next?"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/checkouts.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "028e949afd6170411a7525c7f75d7c2a8fc51b49f06abd93e1a690603667d00c",
+    "bytes": 42451,
+    "sections": [
+      "Checkouts",
+      "How is this different from the Payment Page?",
+      "What does it look like",
+      "Creating and using a checkout",
+      "Different ways to use a checkout",
+      "The checkout lifecycle",
+      "Cancellation and returning to your site",
+      "How to find out the result",
+      "Handling processing failures",
+      "Ensuring consistency",
+      "Payments in reconciliation",
+      "What to do next?"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/payment_page.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "f0927993a8f6989df2b5bb578dce6584533d85c0f73d9c4b368e235006b337c7",
+    "bytes": 20964,
+    "sections": [
+      "Payment Page",
+      "What does it look like",
+      "How to use it",
+      "How to find out the payment result",
+      "Handling processing failures",
+      "Ensuring consistency",
+      "Payments in reconciliation",
+      "What to do next?"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/upgrade_from_v1.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "9a6ca39ae9d354ee61bf8566a749b36714d325768fd46847d67680639dc130c4",
+    "bytes": 25575,
+    "sections": [
+      "Upgrading from V1",
+      "What's new in V2 of the PawaPay API?",
+      "Support for new payment authorisation flows",
+      "Avoiding failures on initiation is now easier",
+      "The best customer experience",
+      "Active configuration gets an overhaul",
+      "How to upgrade from V1?",
+      "How to get the best out of V2?"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/providers.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "c964ad96bc9ca3a2fa1d2eee751a89d5c894c118a82ed8192ec15b2789c7104e",
+    "bytes": 24294,
+    "sections": [
+      "Providers"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/test_numbers.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "05db988f1cce25e6f4ac44e13e9c8c2dd4c83eecb3e8869179b39a8cd4184f1e",
+    "bytes": 36379,
+    "sections": [
+      "Sandbox test numbers",
+      "Overview",
+      "Sandbox test phone numbers (MSISDNs)"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/failure_codes.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "105db570f7ed6ffa2218d2ab4cc7f51885c515f2c4b57c71076a10be80bf0511",
+    "bytes": 16065,
+    "sections": [
+      "Failure codes",
+      "Technical failure codes",
+      "Transaction failure codes"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/brand_guidelines.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "f9e2a579927379ac4b8bf3ab6ff036fe20043035625bb6a3d2010e63635e9479",
+    "bytes": 1371,
+    "sections": [
+      "Provider brand guidelines"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/docs/signatures.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "3eb1ba5f095940181b02dc023a7b92e267ccb17538e5043b7ae500e6853f1ffe",
+    "bytes": 11875,
+    "sections": [
+      "Signatures in API",
+      "Signatures",
+      "Signatures in financial requests",
+      "Hash the request body",
+      "Create the signature base",
+      "Create the signature",
+      "Include Signature and Signature-Input headers",
+      "Make the request",
+      "Signatures in callbacks",
+      "Validate content integrity",
+      "Validate the signature"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/deposits/initiate-deposit.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "e394b5db09487cbdb8800fce897837f66b5107340ba5a4dc80a4cde4e6272ac9",
+    "bytes": 29846,
+    "sections": [
+      "Initiate deposit",
+      "How to find out the final status of this deposit?",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/deposits/check-deposit-status.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "058014623a28722f46f586c83eddc3b0db902b66dd7f1d9f4c8f532d9bab6a1f",
+    "bytes": 22159,
+    "sections": [
+      "Check deposit status",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/deposits/resend-deposit-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "465cfc8d293ab34356437c8d1d0a44ce1cfc95bde8f87014a4b71bfc70b3e617",
+    "bytes": 10378,
+    "sections": [
+      "Resend deposit callback",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/deposits/deposit-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "03c6e0609d89e13b7196673388d44c82a69538bb380fd931afbdd43053558ad8",
+    "bytes": 1802,
+    "sections": [
+      "Deposit callback",
+      "Headers",
+      "Body"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/payouts/initiate-payout.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "7ef80c4ee76132909471fbc7474050e1d9dea27c5e845dc54128ad7a168ed2e2",
+    "bytes": 29146,
+    "sections": [
+      "Initiate payout",
+      "How to find out the final status of this payout?",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/payouts/check-payout-status.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "efaed5688ba49b8fb8ec3dc88d14bfbab2e8f4eda4a1c79f302ad7c1496aabca",
+    "bytes": 22200,
+    "sections": [
+      "Check payout status",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/payouts/resend-payout-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "03e9da6e810872769c48dbc2c8fa30172d8dcb060eb814ed6a95e091c482c48f",
+    "bytes": 11327,
+    "sections": [
+      "Resend payout callback",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/payouts/cancel-enqueued-payout.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "3c38d611b0c56a35fad48ff6b289594d1bf05cd44ef18eb783487dc58daa2b24",
+    "bytes": 10712,
+    "sections": [
+      "Cancel enqueued payout",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/payouts/initiate-bulk-payout.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "623a58d60d03282f643fe0f4d65bd2ef0ec8083ac87cbd87013a947703d4dce6",
+    "bytes": 27646,
+    "sections": [
+      "Initiate bulk payouts",
+      "How do i find out the final statuses of these payouts?",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/payouts/payout-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "3761a77a9c104f8796ef2e05548c3c8c6d7c4e8ed2279594feb4109fbf3cbe3d",
+    "bytes": 1800,
+    "sections": [
+      "Payout callback",
+      "Headers",
+      "Body"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/refunds/initiate-refund.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "de6a001c91f9b7eb5789791354386703482a47f71f89b23c1c046164cac34ffc",
+    "bytes": 27507,
+    "sections": [
+      "Initiate refund",
+      "How to find out the final status of this refund?",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/refunds/check-refund-status.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "a73b48ea105fd38e135dc10442b84ea65cdf46e93f92608fe55d9836d3b0bdfd",
+    "bytes": 21924,
+    "sections": [
+      "Check refund status",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/refunds/resend-refund-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "5ab7d5974f014b6f9401122c55eb808449561e8ac30e7bd9eedda503b7813771",
+    "bytes": 10743,
+    "sections": [
+      "Resend refund callback",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/refunds/cancel-enqueued-refund.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "c9c5e455776e4e4a4a8afecbee36575ab43abd004f0292c032228a6500797ccb",
+    "bytes": 10706,
+    "sections": [
+      "Cancel enqueued refund",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/refunds/refund-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "0a9e61b4c1668e3cec5cf2710cec21494acc27946edcec8f16fe62a24c969d5a",
+    "bytes": 1800,
+    "sections": [
+      "Refund callback",
+      "Headers",
+      "Body"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/remittances/initiate-remittance.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "629ab64f3e8dd031685aaeef0a690f7e413d6eb2da82222a919461abd18e319d",
+    "bytes": 36886,
+    "sections": [
+      "Initiate remittance",
+      "How to find out the final status of this remittance?",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/remittances/check-remittance-status.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "0a531df149164c8cfdc3877b2751803b475e7a822c6ccc041c95282055f3aba9",
+    "bytes": 30032,
+    "sections": [
+      "Check remittance status",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/remittances/resend-remittance-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "da1814d5ea4302644270da86af3a3ad63948222c5d9cfb20ad2e5db973aa161a",
+    "bytes": 10859,
+    "sections": [
+      "Resend remittance callback",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/remittances/cancel-enqueued-remittance.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "805de90f427d0d67ea0e96f0cb910ab23de959999e6c3850d572c0b27460f9d3",
+    "bytes": 10824,
+    "sections": [
+      "Cancel enqueued remittance",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/remittances/remittance-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "0b752f6f916dc78e0b49b431918fbd8741fa183f94d013e96b7a3f0b02177107",
+    "bytes": 1824,
+    "sections": [
+      "Remittance callback",
+      "Headers",
+      "Body"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/checkouts/initiate-checkout.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "a05fac9f753cabb97fbf18615967780208184f5cc394b3dcc1a839bf81954f81",
+    "bytes": 32578,
+    "sections": [
+      "Initiate checkout",
+      "How to find out the final status of this checkout?",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/checkouts/check-checkout-status.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "5b384a11371a98fbd1ba84fbb32315c58de28a48513c3aa478b57c099232e0ca",
+    "bytes": 31118,
+    "sections": [
+      "Check checkout status",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/checkouts/expire-checkout.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "851bbbdb11c3a1048756f0ddcd056917d5989deaa9419ee62c4c5adf34d7e596",
+    "bytes": 12045,
+    "sections": [
+      "Expire checkout",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/checkouts/checkout-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "d44b7802d616b067ce5edfc3be097ab08db1724b18b85c97dfdf5897ccbb0a70",
+    "bytes": 2343,
+    "sections": [
+      "Checkout callback",
+      "Headers",
+      "Body"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/payment-page/deposit-via-payment-page.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "04774bb9ebc468282be860979431e7d428e41c26c11bfee1b83bb9f09e43e130",
+    "bytes": 26084,
+    "sections": [
+      "Deposit via Payment Page",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/finances/wallet-balances.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "1075518f8c70fe80ce037526318fc58d0936ca837d8b417372099d880676d480",
+    "bytes": 9250,
+    "sections": [
+      "Wallet balances",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/finances/initiate-statement.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "54be6a4fc3450ff3af4028add631f7187013b4f42bf1ed68937bddc52e5a4d86",
+    "bytes": 19553,
+    "sections": [
+      "Statements",
+      "How to know which wallets i have?",
+      "How to find out the final status of this statement?",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/finances/check-statement-status.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "d998edb2db09897fe0c796c11cc218e032f0400e42a100b61706e8146ab6a711",
+    "bytes": 15496,
+    "sections": [
+      "Check statement status",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/finances/statement-callback.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "d1d87ef881005a280f3e0c561734fb9fc8b9c315432c0474383bfb0852600804",
+    "bytes": 580,
+    "sections": [
+      "Statement callback",
+      "Body"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/toolkit/active-configuration.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "298f07773abe1582a5b6dda88fa0f5e1d573be9156a7b1f5813300ec58a7d27b",
+    "bytes": 24062,
+    "sections": [
+      "Active Configuration",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/toolkit/availability.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "7d44c11cac53d90b937337f8635cc2b2308f1dff0cf601d61f396076702e15ad",
+    "bytes": 10171,
+    "sections": [
+      "Provider Availability",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/toolkit/predict-provider.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "78df7833acaa2cda6438cf2e64c6f177eb99672a1530a3e5b9eb15a49d58424b",
+    "bytes": 12075,
+    "sections": [
+      "Predict Provider",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/toolkit/public-keys.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "348ac2dbac63d58db53c3b31fffe9988d12b544221441cc8a772c4b606f6e35d",
+    "bytes": 2923,
+    "sections": [
+      "Public Keys",
+      "OpenAPI"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/introduction.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "66fb9a59e6d45f23f2856ac6cc6ee2d0c6de40e839eebf93b1a38fac482bcc78",
+    "bytes": 1611,
+    "sections": [
+      "PawaPay Dashboard"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/signing_in.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "029be159447d9ccdc00ea8a16a56fa8991f21219bb8b4a78505414192f9baf5a",
+    "bytes": 6376,
+    "sections": [
+      "How to log in",
+      "Logging into the dashboard",
+      "Authentication with username and password",
+      "Authentication with Google",
+      "Resetting your password",
+      "Activating your account"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/global_search.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "fbac1fa9c807166cb9d7c66a862f28d42422171f69d8eeecad8e894a045856b4",
+    "bytes": 1170,
+    "sections": [
+      "Global search",
+      "How to search"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/support.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "0cb283bd426397278935c1032edd2cae9c52bad7e386da05582dcfb05fd1f6af",
+    "bytes": 7541,
+    "sections": [
+      "Contacting our support",
+      "Payments",
+      "Wallet to bank settlement",
+      "Bank to wallet top up",
+      "Other enquiries"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/topping_up.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "4dfe4d7dea299883d77492cbd61674001fbaefae751ba7742bd9356df7f47590",
+    "bytes": 9309,
+    "sections": [
+      "Topping up your wallets",
+      "Send your funds to the correct bank account",
+      "Creating a top up",
+      "Choosing a funding method",
+      "Your unique merchant code",
+      "Adding a Liquidity Partner",
+      "How to add one",
+      "After you submit a top up"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/status.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "65f8c41d5f1586b743b3395681c2b0b248f9ba6838cc8daec9a561b349183eb9",
+    "bytes": 2854,
+    "sections": [
+      "Platform and MMO status",
+      "Availability statuses of MMOs",
+      "More about MMO availability"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/home.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "d0c8a1a741cd85750b0115196632bee592c05612ca96c321d5be5139c5d559a9",
+    "bytes": 5152,
+    "sections": [
+      "Home screen",
+      "Overview",
+      "Payments overview",
+      "Wallet balances",
+      "Settlements",
+      "Live incidents",
+      "Role-based Home Screens"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/finances/wallets.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "1d94ebaa0a227cce843fe3208bfb0d85ef32995b487cfd8888fb23a07f4e91ec",
+    "bytes": 2739,
+    "sections": [
+      "Wallets",
+      "Balance overview",
+      "Wallet breakdown",
+      "Export wallet breakdown"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/finances/statements.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "c67583f1b4f4cbc243bbcfb8182ce83bcd9834f3a4092f466514203330413a64",
+    "bytes": 7427,
+    "sections": [
+      "Statements",
+      "Search statements",
+      "Export statements",
+      "Data in statements",
+      "Transaction types"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/finances/history.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "c51762a68b9e451ce683e94e624dab6851ac1f93540ad25b615065b8908274b0",
+    "bytes": 3192,
+    "sections": [
+      "History",
+      "Glossary of data in statements"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/finances/settlements.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "5519669a3b7935c753fc8f872a8f4670c5f13e1374c39b9ec282587a92dc7356",
+    "bytes": 11772,
+    "sections": [
+      "Settlements",
+      "Settlement Preferences Setup",
+      "Where should we send your settlement funds?",
+      "How frequently should we settle?",
+      "Should we retain some funds in your PawaPay wallet?",
+      "Settlements Overview",
+      "In progress",
+      "Completed",
+      "Cancelled",
+      "Skipped",
+      "Manage Settlement Preferences"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/transactions/deposits.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "de93ee96ff23614f970a2a66e3a316ab88382e8d69e3556c30c13ec17a8e2007",
+    "bytes": 4211,
+    "sections": [
+      "Deposits",
+      "Search for deposits",
+      "Glossary of results"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/transactions/deposit_details.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "608b3b44de412ee66498e9721536d99337a1694e0d7d797c61a12605402c03ce",
+    "bytes": 2268,
+    "sections": [
+      "Deposit details",
+      "Successful deposit",
+      "Failed deposit",
+      "Proof of payment (PoP)"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/transactions/payouts.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "76821380fa25303b5ff5964a37c72bbb09d20765aaa744d9af4db1aa9c7b1ce1",
+    "bytes": 4068,
+    "sections": [
+      "Payouts",
+      "Search for payouts",
+      "Glossary of results"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/transactions/payout_details.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "02a3f85bb827d5353aa06db17fd99c1a53c74d6ef0ea897d6db7d0497200e1dc",
+    "bytes": 2226,
+    "sections": [
+      "Payout details",
+      "Successful payout",
+      "Failed payout",
+      "Proof of payment (PoP)"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/transactions/transaction_statuses.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "e53474b28b2be32d2f5857457244a5a9db64c59dd1d59dbf62290d3050d3909b",
+    "bytes": 2061,
+    "sections": [
+      "Transaction statuses"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/transactions/callback_resend.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "622a1cbb021223bd2c8dc84e16bddd3cb84a6537684acea7fabcf1a1888a085e",
+    "bytes": 2286,
+    "sections": [
+      "Callback resend"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/transactions/cancel_enqueued.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "a9ff912dc55bb9c1067ce9b38ba2e077acd9f476166725942d289eeed4e2a07b",
+    "bytes": 2206,
+    "sections": [
+      "Cancel enqueued payout"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/user_management/inviting_users.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "2f9ccbae5c6d454bbb4df1d5144f8f6832c27dade8044104f579c1aeefcb7874",
+    "bytes": 2093,
+    "sections": [
+      "Inviting users",
+      "Inviting a new user"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/user_management/managing_users.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "370df4b3612aacf62ff7166010c76c0cf0e90b66e8d46a52102182cb8a774a8c",
+    "bytes": 6103,
+    "sections": [
+      "Managing users",
+      "Active users",
+      "User Information",
+      "Changing users' country limitations",
+      "Changing users' roles",
+      "Disabling users",
+      "Pending users",
+      "Disabled users"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/user_management/user_roles.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "7ded2c34e0841da10306be5c671684972880b44d34e9920230c585f387b5467a",
+    "bytes": 3845,
+    "sections": [
+      "User roles",
+      "Country based limitations",
+      "User roles"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/user_management/security.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "eb3a8dfde07380d3e32dc5e61541174c75e6a406df633a6cc76e1135f2d1f400",
+    "bytes": 2171,
+    "sections": [
+      "Security",
+      "Two-factor authentication",
+      "Google authentication"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/other/audit_log.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "b30dcc895dadc1316a6a4fc0ca87525ea802c215590af602686de5c14ac9bc0a",
+    "bytes": 5648,
+    "sections": [
+      "Audit logs",
+      "Searching and filtering",
+      "Glossary of actions"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/other/system_conf/callback_urls.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "7cafd839e2c298a52064e05fcb676e07aad9fc21f1e2abfe557fb15c746ab0ef",
+    "bytes": 1860,
+    "sections": [
+      "Callback URLs",
+      "Specifying the callback URLs"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/other/system_conf/api_tokens.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "4fea584faf789e12238889541a02257d97a4adaaa37819fd7b886f5b64d60e7e",
+    "bytes": 5734,
+    "sections": [
+      "API tokens",
+      "Generating an API token",
+      "Active API tokens",
+      "Revoking tokens",
+      "Signed requests",
+      "Accepted algorithms",
+      "Adding a public key",
+      "Signed callbacks"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/dashboard/other/batch_disbursements.md",
+    "retrieved_at": "2026-09-19",
+    "sha256": "4e191efbbfb44f1740bcae5d004cccf385b20141e613092978fad8443d7c3d19",
+    "bytes": 4809,
+    "sections": [
+      "Batch disbursements",
+      "Creating your batch disbursements file",
+      "Example batch disbursement file",
+      "Uploading your batch disbursement file",
+      "Fixing validation failures",
+      "Initiating the batch disbursements"
+    ],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  },
+  {
+    "url": "https://docs.pawapay.io/v2/api-reference/openapi_v2.yaml",
+    "retrieved_at": "2026-09-19",
+    "sha256": "c5b8ded166f9407d0f2736d684900b3859ca89050d25d314ad3dd98b003ab09b",
+    "bytes": 301645,
+    "sections": [],
+    "coverage": "retrieved; API contracts extracted where applicable; targeted integration review"
+  }
+]
